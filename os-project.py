@@ -153,7 +153,7 @@ class Ui_Dialog(object):
         cpu_ =psutil.cpu_percent(interval=1)
         self.cpu_label_2.setText(f"{cpu_} %")
         self.cpu_list.append(cpu_)
-        self.graph_cpu.plot(self.x_list, self.cpu_list, pen='b', name='CPU')
+        self.graph_cpu.plot(self.x_list, self.cpu_list, pen='y', name='CPU')
         
         ram_ = psutil.virtual_memory().percent
         self.ram_label_2.setText(f"{ram_} %")
