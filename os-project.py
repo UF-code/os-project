@@ -158,19 +158,19 @@ class Ui_Dialog(object):
         ram_ = psutil.virtual_memory().percent
         self.ram_label_2.setText(f"{ram_} %")
         self.ram_list.append(ram_)
-        self.graph_ram.plot(self.x_list, self.ram_list, pen='c', name='CPU')
+        self.graph_ram.plot(self.x_list, self.ram_list, pen='c', name='RAM')
         
         disk_ = psutil.disk_usage('/')
         self.disk_label_2.setText(f"{disk_.percent} %")
         self.disk_label_3.setText(f"{size(disk_.used)}")
         self.disk_list.append(disk_.percent)
-        self.graph_disk.plot(self.x_list, self.disk_list, pen='g', name='CPU')
+        self.graph_disk.plot(self.x_list, self.disk_list, pen='g', name='DISK')
         
         battery_ = psutil.sensors_battery()
         self.battery_label_2.setText(f"{battery_.percent} %")
         self.battery_label_4.setText(f"{battery_.power_plugged}")
         self.battery_list.append(battery_.percent)
-        self.graph_battery.plot(self.x_list, self.battery_list, pen='r', name='CPU')
+        self.graph_battery.plot(self.x_list, self.battery_list, pen='r', name='BATTERY')
 
 
     def draw(self):
