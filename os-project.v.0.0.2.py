@@ -139,7 +139,7 @@ class Ui_Dialog(object):
         self.thread={}
     
     def worker(self):
-        self.thread[1] = ThreadClass(parent=None, index=1)
+        self.thread[1] = ThreadClass(parent=None)
         self.thread[1].start()
         self.thread[1].any_signal.connect(self.draw)
         self.pushButton.setEnabled(False)
@@ -190,9 +190,8 @@ class Ui_Dialog(object):
 class ThreadClass(QtCore.QThread):
 
     any_signal = QtCore.pyqtSignal(int, float, float, tuple, tuple)
-    def __init__(self, parent=None, index=0):
+    def __init__(self, parent=None):
         super(ThreadClass, self).__init__(parent)
-        self.index=index
     def run(self):
         counter = 0
         while True:
