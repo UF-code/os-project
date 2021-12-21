@@ -167,6 +167,7 @@ class Ui_Dialog(object):
         self.graph_disk.plot(self.x_list, self.disk_list, pen='g', name='DISK')
         
         battery_ = psutil.sensors_battery()
+        print(battery_)
         self.battery_label_2.setText(f"{battery_.percent} %")
         self.battery_label_4.setText(f"{battery_.power_plugged}")
         self.battery_list.append(battery_.percent)
