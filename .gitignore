@@ -2,3 +2,4 @@
 **/workshop/*.ui
 /test
 # git rm -rf --cached .
+# git reset HEAD~
